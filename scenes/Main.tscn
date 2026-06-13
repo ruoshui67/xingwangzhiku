@@ -1,0 +1,1636 @@
+[gd_scene format=3 uid="uid://lebd5jxkco40"]
+
+[ext_resource type="Script" uid="uid://c0e1sgequi6kt" path="res://scripts/Player.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cf7va4v6igd2s" path="res://墙壁.png" id="1_ft6cd"]
+[ext_resource type="Script" uid="uid://bxcpntb08oiyf" path="res://scripts/Npc.gd" id="2"]
+[ext_resource type="Script" uid="uid://cgpg6uit2jjlq" path="res://scripts/PauseManager.gd" id="3"]
+[ext_resource type="Script" uid="uid://sr6n7x5yp7d2" path="res://scripts/SettingsMenu.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://dxwqvbriw5g6q" path="res://assets/models/Walking2.fbx" id="6"]
+[ext_resource type="Script" uid="uid://bjn33y6r15aof" path="res://scripts/skill_panel.gd" id="34"]
+[ext_resource type="Script" uid="uid://nonr5tj6lvo" path="res://scripts/inventory_panel.gd" id="35"]
+[ext_resource type="Script" uid="uid://biag7u4xq8w53" path="res://scripts/door.gd" id="36"]
+[ext_resource type="PackedScene" uid="uid://bnlmvtluwocfp" path="res://tableCross.fbx" id="47"]
+[ext_resource type="PackedScene" uid="uid://cy8vgeavp8r21" path="res://assets/models/Lantern.fbx" id="51"]
+[ext_resource type="Script" uid="uid://dfwjvwnpj7v8s" path="res://scripts/journal_panel.gd" id="52"]
+[ext_resource type="Script" uid="uid://bw4rrnblxwybr" path="res://scripts/top_bar.gd" id="53"]
+[ext_resource type="PackedScene" uid="uid://br2lp8diw6ag4" path="res://assets/models/Walking_p2.fbx" id="54"]
+[ext_resource type="Script" uid="uid://2xmqajrleyd0" path="res://scripts/Player2.gd" id="55"]
+[ext_resource type="Script" uid="uid://dbq5hlrj7m1t5" path="res://scripts/OpeningDialog.gd" id="60"]
+[ext_resource type="Script" uid="uid://cvo5al4kccrl3" path="res://scripts/house_walls.gd" id="62"]
+[ext_resource type="Texture2D" uid="uid://dpjd8sljf1sd8" path="res://assets/portraits/karl.png" id="63"]
+[ext_resource type="Texture2D" uid="uid://xi4dmcjjat1w" path="res://assets/portraits/hans.png" id="64"]
+[ext_resource type="Texture2D" uid="uid://bbboblerkrsnp" path="res://assets/portraits/moro.jpg" id="65"]
+[ext_resource type="Texture2D" uid="uid://ct5u5toeei1mu" path="res://assets/portraits/dieter.jpg" id="66"]
+[ext_resource type="PackedScene" uid="uid://ocxdpvelv5pp" path="res://assets/models/Meshy_AI_Apron_Alchemist_0616112128_texture.fbx" id="67"]
+[ext_resource type="PackedScene" uid="uid://c1mlp044bt746" path="res://assets/models/Meshy_AI_Apron_Wearing_Carpent_0615143708_texture.fbx" id="68"]
+[ext_resource type="PackedScene" uid="uid://dbbic7kfc24ac" path="res://assets/models/Meshy_AI_Patchwork_Boy_0616114029_texture.fbx" id="69"]
+[ext_resource type="PackedScene" uid="uid://dylhu1wyqvv5j" path="res://assets/models/Meshy_AI_Blue_Uniform_Officer_0616115720_texture.fbx" id="70"]
+[ext_resource type="Texture2D" uid="uid://dr2333hdm1dhn" path="res://assets/textures/door.png" id="71"]
+[ext_resource type="Texture2D" uid="uid://cl7kdhkqfxpad" path="res://assets/textures/journal_bg.jpg" id="75"]
+[ext_resource type="Texture2D" uid="uid://bktae5b2x6ll3" path="res://assets/textures/backpack_bg.jpg" id="76"]
+[ext_resource type="Texture2D" uid="uid://dr6448yhc4h24" path="res://assets/textures/skill_bg_male.png" id="77"]
+
+[sub_resource type="Environment" id="46"]
+background_mode = 1
+ambient_light_source = 1
+ambient_light_color = Color(0.4, 0.4, 0.5, 1)
+ambient_light_energy = 0.6
+
+[sub_resource type="StandardMaterial3D" id="21"]
+albedo_color = Color(0.38, 0.28, 0.18, 1)
+
+[sub_resource type="BoxMesh" id="23"]
+material = SubResource("21")
+size = Vector3(28, 1, 20)
+
+[sub_resource type="BoxShape3D" id="24"]
+size = Vector3(28, 1, 20)
+
+[sub_resource type="StandardMaterial3D" id="22"]
+albedo_texture = ExtResource("1_ft6cd")
+uv1_scale = Vector3(4, 2, 1)
+
+[sub_resource type="BoxMesh" id="25"]
+material = SubResource("22")
+size = Vector3(28.6, 5, 0.3)
+
+[sub_resource type="BoxShape3D" id="26"]
+size = Vector3(28.6, 5, 0.3)
+
+[sub_resource type="BoxMesh" id="74"]
+size = Vector3(1.5, 2, 0.1)
+
+[sub_resource type="BoxMesh" id="27"]
+material = SubResource("22")
+size = Vector3(0.3, 5, 20)
+
+[sub_resource type="BoxShape3D" id="28"]
+size = Vector3(0.3, 5, 20)
+
+[sub_resource type="BoxShape3D" id="49"]
+size = Vector3(29.2, 5, 0.3)
+
+[sub_resource type="BoxShape3D" id="47"]
+size = Vector3(4.7157636, 0.45667675, 2.5054078)
+
+[sub_resource type="CapsuleShape3D" id="3"]
+radius = 0.35
+height = 1.4
+
+[sub_resource type="BoxShape3D" id="6"]
+size = Vector3(1, 1.6, 1)
+
+[sub_resource type="SphereShape3D" id="10"]
+radius = 3.5
+
+[sub_resource type="SphereShape3D" id="20"]
+radius = 2.0
+
+[sub_resource type="StandardMaterial3D" id="39"]
+albedo_texture = ExtResource("71")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="40"]
+material = SubResource("39")
+size = Vector3(2, 5, 0.15)
+
+[sub_resource type="BoxShape3D" id="41"]
+size = Vector3(2, 5, 0.15)
+
+[sub_resource type="StyleBoxFlat" id="11"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 0.9)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Main" type="Node3D" unique_id=1008629288]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2026660015]
+environment = SubResource("46")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1943130605]
+transform = Transform3D(0.70710677, 0.49999997, -0.49999997, 0, 0.70710677, 0.70710677, 0.70710677, -0.49999997, 0.49999997, 0, 0, 0)
+light_energy = 1.2
+
+[node name="House" type="StaticBody3D" parent="." unique_id=2043667170]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 6)
+script = ExtResource("62")
+
+[node name="Floor" type="MeshInstance3D" parent="House" unique_id=629774625]
+transform = Transform3D(1, 3.057136e-05, -3.8444996e-05, -3.0571355e-05, 1, 1.8187837e-05, 3.8444996e-05, -1.818784e-05, 1, -0.009262085, -0.48322868, -0.01556778)
+mesh = SubResource("23")
+
+[node name="FloorShape" type="CollisionShape3D" parent="House" unique_id=2143958387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("24")
+
+[node name="Walls" type="StaticBody3D" parent="House" unique_id=1906479862]
+collision_layer = 2
+collision_mask = 0
+
+[node name="WallN" type="MeshInstance3D" parent="House/Walls" unique_id=1872855358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -10)
+mesh = SubResource("25")
+
+[node name="WallNShape" type="CollisionShape3D" parent="House/Walls" unique_id=1607473173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -10)
+shape = SubResource("26")
+
+[node name="WindowN1" type="MeshInstance3D" parent="House/Walls" unique_id=1432663817]
+transform = Transform3D(1.0095748, 0, 0, 0, 0.5391582, 0, 0, 0, 1.0095748, -1.9957829, 3.9971128, -9.75)
+mesh = SubResource("74")
+
+[node name="WallW" type="MeshInstance3D" parent="House/Walls" unique_id=904408648]
+transform = Transform3D(0.99951863, -0.03103209, 0.00026088953, 0.031032406, 0.99951774, -0.0013166326, -0.00021976233, 0.0013240911, 0.99999946, -13.914431, 2.4265466, 0.087316036)
+mesh = SubResource("27")
+
+[node name="WallWShape" type="CollisionShape3D" parent="House/Walls" unique_id=234743199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 2.5, 0)
+shape = SubResource("28")
+
+[node name="BarrierS" type="CollisionShape3D" parent="House/Walls" unique_id=768988651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 10)
+shape = SubResource("49")
+
+[node name="BarrierE" type="CollisionShape3D" parent="House/Walls" unique_id=1171095268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 2.5, 0)
+shape = SubResource("28")
+
+[node name="Table" parent="House" unique_id=1311729641 instance=ExtResource("47")]
+transform = Transform3D(0.36166918, 0, 0.011206552, 0, 0.28390947, 0, -0.011839792, 0, 0.34232622, 3.2154326, 0.0063443184, 1.8814025)
+
+[node name="TableBody" type="StaticBody3D" parent="House" unique_id=192955166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4499998, 0.39913195, 3.17)
+collision_layer = 2
+
+[node name="TableShape" type="CollisionShape3D" parent="House/TableBody" unique_id=1296906360]
+transform = Transform3D(0.99932265, 0, 0.036800712, 0, 1, 0, -0.036800712, 0, 0.99932265, 0.0687089, 0.11964196, 0.048505306)
+shape = SubResource("47")
+
+[node name="Lantern" parent="House" unique_id=4874882 instance=ExtResource("51")]
+transform = Transform3D(0.20000002, 0, 0, 0, 0.2, 0, 0, 0, 0.20000002, 2.8062296, 0.973006, 2.6571712)
+
+[node name="Light" type="OmniLight3D" parent="House/Lantern" unique_id=1512906698]
+transform = Transform3D(4.9999986, 0, 0, 0, 5, 0, 0, 0, 4.9999986, -0.18926239, 3.3470078, 0.55433655)
+light_color = Color(1, 0.8, 0.4, 1)
+light_energy = 3.0
+shadow_enabled = true
+omni_range = 8.0
+
+[node name="Player1" type="CharacterBody3D" parent="." unique_id=1718267243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.377306, 1.05, 11.576321)
+collision_mask = 3
+script = ExtResource("1")
+crosshair_path = NodePath("../UI/Crosshair")
+crosshair_circle_path = NodePath("../UI/CrosshairCircle")
+crosshair_redx_path = NodePath("../UI/CrosshairRedX")
+dialogue_box_path = NodePath("../UI/DialogueBox")
+choice_panel_path = NodePath("../UI/ChoicePanel")
+dice_panel_path = NodePath("../UI/DicePanel")
+skill_panel_path = NodePath("../UI/SkillPanel")
+inventory_panel_path = NodePath("../UI/InventoryPanel")
+bubble_panel_path = NodePath("../UI/BubbleWrapper")
+journal_panel_path = NodePath("../UI/JournalPanel")
+
+[node name="PlayerModel" parent="Player1" unique_id=707244399 instance=ExtResource("6")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, -0.31275725, -0.058000088)
+
+[node name="PlayerShape" type="CollisionShape3D" parent="Player1" unique_id=1568835907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25423694, 0)
+shape = SubResource("3")
+
+[node name="CameraPivot" type="Node3D" parent="Player1" unique_id=1690773765]
+transform = Transform3D(1, 0, 0, 0, 0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player1/CameraPivot" unique_id=1235694720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 8)
+current = true
+
+[node name="Player2" type="CharacterBody3D" parent="." unique_id=983223550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.35524, 1.05, 6.6977053)
+collision_mask = 3
+script = ExtResource("55")
+prompt_label_path = NodePath("../UI/PromptLabel")
+crosshair_path = NodePath("../UI/Crosshair")
+crosshair_circle_path = NodePath("../UI/CrosshairCircle")
+crosshair_redx_path = NodePath("../UI/CrosshairRedX")
+dialogue_box_path = NodePath("../UI/DialogueBox")
+choice_panel_path = NodePath("../UI/ChoicePanel")
+dice_panel_path = NodePath("../UI/DicePanel")
+skill_panel_path = NodePath("../UI/SkillPanel")
+inventory_panel_path = NodePath("../UI/InventoryPanel")
+bubble_panel_path = NodePath("../UI/BubbleWrapper")
+journal_panel_path = NodePath("../UI/JournalPanel")
+
+[node name="NpcModel" parent="Player2" unique_id=666143502 instance=ExtResource("54")]
+transform = Transform3D(1.9, 0, 0, 0, 1.9, 0, 0, 0, 1.9, 0, -0.85, 0)
+
+[node name="Player2Shape" type="CollisionShape3D" parent="Player2" unique_id=301197406]
+shape = SubResource("6")
+
+[node name="InteractArea" type="Area3D" parent="Player2" unique_id=1463247337]
+
+[node name="InteractShape" type="CollisionShape3D" parent="Player2/InteractArea" unique_id=214542867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.002076149)
+shape = SubResource("10")
+
+[node name="卡尔" type="StaticBody3D" parent="." unique_id=518742905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3128848, 1.05, 7.815694)
+script = ExtResource("2")
+dialogue_box_path = NodePath("../UI/DialogueBox")
+dialogue_label_path = NodePath("../UI/DialogueBox/DialogueScroll/DialogueText")
+dialogue_text = "卡尔·贝克尔坐在对面，双手放在膝盖上。"
+dialogue_lines = Array[String](["墙上军官的相框被摘走了，留下一块深色的长方形痕迹，像墙上的伤疤。穿绿灰色大衣的男人坐在你对面，双手放在膝盖上，指关节发白。他是卡尔·贝克尔，鞋匠，四十二岁，住在伊岑巷。第七个失踪的法国兵——列兵让·杜邦——最后一次被看见的地方，距他的店铺不到三百英尺。", "卡尔：（清了清嗓子，但没有看你的眼睛）
+「所以……您是柏林来的探员。他们说您是来——帮忙的。」", "他的重音落在\"帮忙\"两个字上，像在品一颗变质的橄榄。", "【帝国幽灵】 他说的不是\"帮忙\"。是\"帮——忙\"。一个缓刑囚犯看着另一个缓刑囚犯被请进法官的休息室。他知道你是什么人。一个战败国的警察，在占领者的地盘上。你和他一样，都是戴着手铐在走路的人。", "【普鲁士纪律】 程序：确认受询问者身份。你应当先让他说清楚他的名字、年龄、职业。这是警察手册第一条。不管你是在柏林还是在科隆，流程就是流程。保持流程，你就不会迷失。", "【莱茵河畔】 他的手上有茧，拇指根部有被锥子刺穿后留下的旧疤。那不是握枪的手。那是做靴子的手，修鞋的手，供养家庭的手。他大概有一把年纪足够大的儿子——也许死在了某个战壕里。他看着你，就像看着另一个被生活骗了的人。"])
+speaker_sequence = Array[String](["npc", "npc", "npc", "npc", "npc", "npc"])
+player_portrait_path = NodePath("../UI/PortraitPlayer")
+npc_portrait_path = NodePath("../UI/PortraitNpc")
+npc_portrait_texture = ExtResource("63")
+choice_panel_path = NodePath("../UI/ChoicePanel")
+dice_panel_path = NodePath("../UI/DicePanel")
+npc_name = "卡尔"
+ground_offset = 0.9
+choice_lines = Array[String](["【普鲁士纪律】确认身份", "【莱茵河畔】安抚", "【灰烬喉】沉默凝视", "【红衣逻辑】推理质问", "【对话】直接问"])
+choice_responses = Array[String](["卡尔放松了一点——程序让他觉得这是个\"正经警察\"。", "卡尔眼神闪了一下——你说了\"德语\"。", "卡尔紧张，坐得更直了，指关节更白了。", "卡尔眼神微妙变化——他有话没说。", ""])
+choice_dice_idx = 3
+choice_response_fail = "卡尔困惑地皱眉：「对不起，我不太明白您的意思……士兵难道不都应该是模范的吗？」"
+follow_up_lines = Array[String](["卡尔慢慢深吸一口气，目光落在窗框上剥落的漆皮上。", "卡尔：
+「那个晚上……上周四。我做活到很晚，过了十一点。那天有个单子急，一个军官要一双新靴子——宪兵的翻毛靴。我在赶工。」", "【普鲁士纪律】 他说\"一个军官\"。没有说法国军官。他在小心翼翼地避开那个词，好像说出来会弄脏自己的舌头。", "【莱茵河畔】 周四晚上十一点做靴子。为一个占领军的军官。他痛恨死了这份活，但他得吃饭。", "【帝国幽灵】 翻毛宪兵靴——那是杜瓦尔身上穿的那种。他给杜瓦尔的手下做靴子。"])
+follow_up_speakers = Array[String](["npc", "npc", "npc", "npc", "npc"])
+follow_up_choice_lines = Array[String](["【铁十字】占领军在你店里订靴子", "【对话】你听到了什么？", "【灰烬喉】上周四晚，具体几点？", "【普鲁士纪律】有没有留下线索？", "【莱茵河畔】要喝口水再讲吗？"])
+follow_up_choice_responses = Array[String](["卡尔沉默片刻，低声说：\"日子总得过。\"", "", "卡尔回答得更快了，语气简短。", "卡尔皱眉回忆：\"声音……先是很闷的一声，然后是拖拽声……\"", "卡尔放松了些，用更口语化的方式开始讲述。"])
+follow_up_choice_journal_clues = Array[String](["", "", "", "□ 声音线索 —— 拖拽声 + 低声骂人（德语）", ""])
+follow_up_choice_dice_idxs = Array[int]([0, 3, 4])
+follow_up_choice_response_fail = "卡尔摇头：\"天太黑，我什么也没看见。\""
+follow_up2_lines = Array[String](["卡尔：
+「我听到……外面有声音。运河水闸那边，大概离我铺子——唔——一百来尺。起初以为又是野猫在打架。运河边常有人见到野猫……后来声音不对了。」", "他停了下来，指尖摩擦着大拇指的老茧。", "【枯玫瑰】 停顿。一个说故事的人在犹豫是否要讲下去。他在衡量——衡量说出来之后的代价。一个德国人说出了对法国士兵之死有用的信息。沉默是黄金，黄金在这里比马克值钱。", "【红色脉搏】 \"运河边常有人见到野猫\"。不——人。运河边常有人见到的是人。抵抗组织的人。他们是\"野猫\"。他差点说出点什么。"])
+follow_up2_speakers = Array[String](["npc", "npc", "npc", "npc"])
+follow_up2_choice_lines = Array[String](["【红色脉搏】铁之心碰头的地方？", "【莱茵河畔】声音怎么不对劲？", "【帝国幽灵】和围城战有关吗？", "【对话】声音怎么不对了？", "【灰烬喉】说下去。"])
+follow_up2_choice_responses = Array[String](["卡尔脸色发白：\"我不知道您在说什么。\"", "卡尔低声说：\"有人……在说话。用德语。但压得很低，像是在骂人。\"", "卡尔眼神恍惚了一瞬：\"不像战争。比战争——安静。像有人故意不出声的那种安静。\"", "卡尔说：\"好像……有人在拖什么东西。\"", "卡尔吞咽了一下，声音变得更小。"])
+follow_up2_choice_journal_clues = Array[String](["", "□ 声音线索 —— 拖拽声 + 低声骂人（德语）", "", "", ""])
+follow_up2_choice_dice_idxs = Array[int]([0, 1, 2])
+follow_up3_lines = Array[String](["卡尔：
+「我没……我没敢开窗。就从铺子后门的门缝往外看了一眼。月亮被云遮了大半，运河边——黑压压的。但我看到——有两个影子。」", "他伸出手，做了个动作——手掌竖着比了比高度。", "【红衣逻辑】 两个影子。一个高，一个矮一些。或者——一个站着的人，和一个被拖行的人。如果杜邦是那个被拖行的，那么那个站着的人至少比杜邦高出半个头……", "【普鲁士纪律】 等一下。两个影子——这不一定是犯罪者和受害者。这还可能是两个犯罪者。或者一个犯罪者和一个——帮凶。你要问清楚他到底看到了什么。"])
+follow_up3_speakers = Array[String](["npc", "npc", "npc", "npc"])
+follow_up3_choice_lines = Array[String](["【红衣逻辑】影子的位置关系？", "【普鲁士纪律】描述体态", "【铁十字】闻到什么？", "【枯玫瑰】为什么必须看一眼？", "【对话】能认出是谁吗？"])
+follow_up3_choice_responses = Array[String](["卡尔想了想：「一前一后。前面那个人……好像低了一下头，就像看地上的东西。」", "卡尔：「一个高一些，一个矮一些。高的那个走路的脚步——很稳。像——军人。」", "卡尔忽然皱眉：「你这么说……好像有股怪味。一种……油的味道。」", "卡尔沉默了很久：「因为我知道那天晚上会发生点什么。那条街上的人都知道。」", "卡尔摇头：「没能。」"])
+follow_up3_choice_journal_clues = Array[String](["", "□ 体态线索 —— 两个影子，一个步伐稳健似军人", "□ 气味线索 —— 可疑的油味", "", ""])
+follow_up3_choice_dice_idxs = Array[int]([0, 2, 3])
+follow_up4_lines = Array[String](["卡尔：
+「我知道的就这些了。我后来关好门，上楼去睡觉了。第二天早上宪兵就来了。」", "他终于抬头看了你一眼。那眼神里有一种复杂的、像锁扣一样的东西。", "【莱茵河畔】 他害怕他说的太多了。一个德国人给法国占领军的案件提供线索——这是背叛。你会拿到这些信息，做成一份报告，交给走廊里那个法国女人。她说一声\"谢谢合作\"，然后什么也不会改变。", "【铁十字】 但他还是说了。他知道租界的规矩——法国人是房东，他是租客，你也是。你们都是在这座城市里寄人篱下的人。区别在于——你知道自己是个过客，他知道自己无处可去。", "【普鲁士纪律】 询问结束。你该决定下一步了。要么让他走，要么——再深挖一下。"])
+follow_up4_speakers = Array[String](["npc", "npc", "npc", "npc", "npc"])
+follow_up4_choice_lines = Array[String](["【莱茵河畔】谢谢，没有下一次", "【铁十字】你认识杜邦吗？", "【普鲁士纪律】不要离开科隆", "【红色脉搏】野猫怎么找？", "【对话】你觉得他死了吗？"])
+follow_up4_choice_responses = Array[String](["卡尔的手微微松开了一点。", "卡尔犹豫：「有……有一次他来取隔壁裁缝做的衣服，从我门口经过。蓝眼睛。很年轻。」", "卡尔面无表情：「是，探员先生。」", "卡尔压低声音：「运河第三座桥，桥底下有块松动的石头。」", "卡尔用很久才回答：「我希望他死了。死了的兵不会让人再想起战争。」"])
+follow_up4_choice_journal_clues = Array[String](["", "□ 杜邦人物细节 —— 蓝眼睛，年轻，不像兵", "", "□ 抵抗组织联系 —— 运河第三座桥的暗号", ""])
+follow_up4_choice_dice_idxs = Array[int]([1, 3])
+scene_end_text = "卡尔·贝克尔站起来，驼着背走向门口。经过走廊时，杜瓦尔中尉侧身让开了一条缝。他们的目光没有相遇。
+门关上了。房间里只剩下漂白的方形墙痕，和从运河方向飘进来的——某种若有若无的气味。"
+prompt_label_path = NodePath("../UI/PromptLabel")
+
+[node name="NpcModel" parent="卡尔" unique_id=208604795 instance=ExtResource("68")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0.8906374, -0.058000088)
+
+[node name="NpcShape" type="CollisionShape3D" parent="卡尔" unique_id=1188718360]
+shape = SubResource("6")
+
+[node name="InteractArea" type="Area3D" parent="卡尔" unique_id=2047495857]
+
+[node name="InteractShape" type="CollisionShape3D" parent="卡尔/InteractArea" unique_id=340906879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3588345, 0)
+shape = SubResource("10")
+
+[node name="汉斯" type="StaticBody3D" parent="." unique_id=201255617]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1.05, -15)
+script = ExtResource("2")
+dialogue_box_path = NodePath("../UI/DialogueBox")
+dialogue_label_path = NodePath("../UI/DialogueBox/DialogueScroll/DialogueText")
+dialogue_text = "汉斯·福克斯坐在对面，穿一件沾着机油痕迹的灰色工装。"
+dialogue_lines = Array[String](["汉斯：（抬手指了指天花板角落的煤气灯，嘴角有一点弧度）
+「那盏灯有个问题——灯芯偏了，左边的火比右边低。你们要是再不管，再过两周它会闪得跟打嗝似的。」", "他放下手，看着你。不是打量，是那种工匠看工具的眼神——在判断你是什么零件。", "【帝国幽灵】 汉斯·福克斯。他的工坊在马厩改建的车库里，离工业区不远。一个德国工匠，在法占区开着铺子。有法国通讯兵去他那里修电台。街坊有人说他\"亲法\"——他听到的时候不辩解，也不笑。这种人比卡尔危险。卡尔不说话，是因为害怕；汉斯不说话，是因为他不觉得有必要。", "【普鲁士纪律】 汉斯·福克斯，三十二岁，伊岑巷附近某旧马厩改造的机修工坊。自愿前来协助调查——至少宪兵通知他时他是这么说的。他不是目击者。他是杜邦的最后一个非军事接触人。你要从\"打火机\"开始，还是从\"杜邦\"开始？", "【莱茵河畔】 他的眼睛在灯下有一种奇异的温度——不是冷漠，是那种早上去敲作坊门时、师傅抬头看你一眼说\"进来吧\"的温度。他不是来被审的。他是来——看看。看看这个柏林来的警察值不值得他把知道的东西拿出来。"])
+speaker_sequence = Array[String](["npc", "npc", "npc", "npc", "npc"])
+player_portrait_path = NodePath("../UI/PortraitPlayer")
+npc_portrait_path = NodePath("../UI/PortraitNpc")
+npc_portrait_texture = ExtResource("64")
+choice_panel_path = NodePath("../UI/ChoicePanel")
+dice_panel_path = NodePath("../UI/DicePanel")
+npc_name = "汉斯"
+ground_offset = 0.9
+choice_lines = Array[String](["【普鲁士纪律】公事公办", "【莱茵河畔】展示打火机", "【红衣逻辑】别绕弯子", "【帝国幽灵】亲法标签", "【对话】那天什么情况？"])
+choice_responses = Array[String](["汉斯点点头：「好，公事公办。」他从兜里摸出烟斗，在椅腿上磕了磕，没有点。", "汉斯拿起打火机翻了个面，摸到自己修过的打火轮，低声说：「是我修的。」他抬头看你一眼——那一眼多了一点点东西。", "汉斯微微一愣，然后笑了一声——不是嘲笑，是\"碰上一个能听懂话的人\"的那种笑。「不正常。他不正常。」", "汉斯沉默了一会儿。然后用一种很轻的声音说：「我没有亲法。我只是不恨——不恨某一个具体的人。恨一个抽象的东西太累了，探员先生。我修过太多坏掉的机器——比你想象的要多。坏掉的机器都是一样的……不管它上面写着德语还是法语。」", ""])
+choice_dice_idxs = Array[int]([2, 3])
+follow_up_lines = Array[String](["汉斯：（他拿回打火机，用拇指磨了磨打火轮）
+「这东西——杜邦拿给我的时候，打火轮卡死了。不是磨损——是撞的。有人把它往硬东西上拍过。墙上。石头上。反正是平的、硬的东西。」", "他把打火机举到灯光下。
+「这儿——看到没？边缘有块凹痕。不是摔的。摔的痕迹更散。这种——集中在一点上的撞击——」
+他顿了一下。
+「——像是有人把他按在墙上，口袋里的打火机被撞碎了。」", "【红衣逻辑】 打火机被撞碎——不是打斗，是被控制。杜邦在某个时间点上被人按在了墙上。汉斯看到的是物理痕迹，但物理痕迹的背后是一个姿势。——一个警告。把它放下，别再查了。", "【普鲁士纪律】 把这一条记下来。杜邦在失踪前收到过暴力警告。汉斯·福克斯是唯一一个能在法庭上对这件物证做技术鉴定的人。他不是目击者——他是你的专家证人。", "【枯玫瑰】 汉斯说\"像是有人把他按在墙上\"的时候声音没有变。他在描述一件发生在他的手艺人同行身上的暴力——不是没有感情，是感情都收到了技术术语后面。"])
+follow_up_speakers = Array[String](["npc", "npc", "npc", "npc", "npc"])
+follow_up_choice_lines = Array[String](["【红衣逻辑】这说明什么？", "【普鲁士纪律】法庭鉴定", "【枯玫瑰】你想过那个人吗？", "【帝国幽灵】他怎么解释的？", "【对话】杜邦怎么说的？"])
+follow_up_choice_responses = Array[String](["汉斯把烟斗从嘴里拔出来：「说明那个人不想杀他。至少当时不想。是想让他——闭嘴。闭嘴和让他永远闭嘴是两件事。那天他离开我店的时候，他是\"闭嘴\"了。但不是永远。」", "汉斯认真起来：「可以。撞击面大约两点五厘米乘一点二厘米的矩形凹陷区——看起来像是砖墙的棱角，不是石头的光面。角度——从口袋向外，推测他在被撞的时候口袋面朝外贴着墙。」", "汉斯沉默了很久。绿罩灯的影子在他脸上晃了一下。「……会的。」他把打火机放在桌上，第一次不看着它。「他走的时候我说\"下周来拿\"。他说好。我没等到下个星期。」", "汉斯吸了一口烟斗，慢慢吐出来。「他说——'有人误会了。我已经跟他说清楚了。'我说——你的打火机不像是误会。他说——是，但它会再亮起来的。跟他修好的打火机一样。然后他笑了。」汉斯盯着烟斗的火星。「他笑起来——不像个兵。比兵干净。」", "汉斯：「说是撞到了墙。但我觉得不是他自己撞的。」"])
+follow_up_choice_journal_clues = Array[String](["□ 杜邦被多次警告而非一次性清除", "□ 打火机鉴定 —— 故意撞击，非意外摔落", "□ 杜邦性格变化 —— 受过警告但相信自己能摆平", "", ""])
+follow_up_choice_dice_idxs = Array[int]([0, 2, 3])
+follow_up2_lines = Array[String](["汉斯：（他的烟斗已经灭了。他把烟斗搁在桌沿上）
+「那个晚上——杜邦失踪的那天晚上。我在工坊里改一张图纸。倒不是特意熬夜——一画就忘了时间。」", "他揉了揉眼睛。
+「大概——一点左右。准确地说，过了十二点。我听到了几声响。从运河那边传来的。铁器撞击的声音。」
+他伸出三根手指。
+「三下。很规律。第一下——停了个呼吸。第二下——停了个呼吸。第三下。然后没了。」", "【红衣逻辑】 三下。规律。有间隔。这不是意外碰撞——这是信号。有人在运河边用铁器发出暗号。", "【红色脉搏】 \"铁器\"。运河。船。系船柱是铁的。第三座桥——卡尔说的暗号石就在第三座桥下面。", "【帝国幽灵】 科隆围城战的时候，信号不只是军号。石匠敲石头、铁匠敲铁轨、牧师敲钟——一个被围困的城市会把任何能发出声音的东西变成暗语。那些节奏活过了围城、活过了投降、活过了占领。现在有人在运河边敲给另一个人听。"])
+follow_up2_speakers = Array[String](["npc", "npc", "npc", "npc", "npc"])
+follow_up2_choice_lines = Array[String](["【红色脉搏】重现节奏", "【红衣逻辑】敲什么？", "【帝国幽灵】什么意思？", "【普鲁士纪律】方位？", "【对话】没出去看看？"])
+follow_up2_choice_responses = Array[String](["汉斯拿起烟斗在桌上敲了三下——梆。梆。梆。节奏像心跳，间隔一致。「就是这样。」你知道这不是求救信号。这是\"已到达\"。或者\"已处理\"。", "汉斯马上回答：「系船柱。运河边的系船柱是铸铁的，空心的——敲起来声音传得很远。还有沿河的消防栓盖子，也是铁铸的。不过系船柱更高，敲的人不用弯腰。」", "汉斯把烟斗放回嘴里，吸了一口已经灭了的烟，慢慢地说了出来：「'完了'。我觉得是。三下——不是钟声的'三、三、九'那种——是结束的那种。像木匠钉好一个箱子，最后敲三锤一样。」他顿了顿：「我们都是从那年活下来的人。有些声音的意思我们不用学。」", "汉斯闭眼回忆：「偏下——不是上游。应该是第三座桥再往下一点的位置。可能是沿着仓库那边。」", "汉斯：「我没出去。外面太黑了。而且——」他没说完。卡尔没说完。汉斯也没说完。科隆人在晚上不出门的理由不用解释。"])
+follow_up2_choice_journal_clues = Array[String](["□ 金属撞击三下 —— 系船柱信号，\"已完成\"", "", "", "", ""])
+follow_up2_choice_dice_idxs = Array[int]([0, 1, 2])
+follow_up3_lines = Array[String](["汉斯：（他犹豫了一下）
+「杜邦先生来找我不只是修打火机。」
+他把烟斗放在桌上。「他看到了我的图纸——一个有问题的火花塞，我管它叫FZ-7。绝缘材料一直找不好。他没说多的话，拿起来在灯下看了两秒——然后直接问我：'这里面有油吗。'」", "汉斯看着你。那种眼神是——同行在看同行，看你能不能听懂下一句。
+「一个普通的步兵不会知道火花塞里面有没有油。更不会只看了两眼就问到那个零件的位置。杜邦入伍前就是搞机械的——他不是随便问问。他是想知道——我在使用的燃料，是不是同一种。他在查东西。他知道自己在查什么。他不是在瞎转。」", "【红衣逻辑】 杜邦在你铺子里说了\"里面有没有油\"。他是想知道火花塞用的是什么燃料。为什么？因为他见过那种燃料。他在某个地方认出了一种特殊的油——军用燃料。他找到了你，不是修打火机——是求证。", "【普鲁士纪律】 你注意到：汉斯在转述\"里面有没有油\"的时候——他把杜邦的话放在了自己的描述前面。这个人的记忆以准度为单位。", "【铁十字】 你在科隆围城战中被围了两个月。你记得燃料的味道。你知道汉斯给了杜邦那个答案——因为汉斯修东西，不修政治。但给完之后呢？他把杜邦打发出门，看着这个年轻人走进十月的夜里——去追那些\"里面有油\"的东西。然后杜邦再也没有回来过。"])
+follow_up3_speakers = Array[String](["npc", "npc", "npc", "npc", "npc"])
+follow_up3_choice_lines = Array[String](["【红衣逻辑】你用的什么燃料？", "【铁十字】油从哪来的？", "【普鲁士纪律】详细描述燃料", "【帝国幽灵】你没说别查了？", "【对话】军用燃料？"])
+follow_up3_choice_responses = Array[String](["汉斯：「我告诉了他。我用的是一种混合油——从裁缝布店买来的，说是什么'灯油'。但我在试的时候知道那不是灯油。灯油烟大，发黑。这个油——火焰蓝到发白，温度比我任何燃料都高。」他停了。「他听完就说'我知道这东西来自哪里'。然后他就走了。」", "汉斯沉默。然后慢慢说：「这种事——我不问。但如果你非要问的话——那东西不是市场上随便买到的。纯度太高。能稳定供应的只有军用仓库。」他把你没说的那半句说了出来：「有人在军方里面往外搬燃料。」", "汉斯正色：「浅琥珀色，比煤油透亮。摇晃起来黏度略高——在瓶壁上有缓慢的挂珠。气味——不是煤油的刺鼻味儿，更甜一点，有点像……变质的松节油混着医院的消毒水。燃烧温度比民用煤油高至少一百度——这绝对不是民用燃料。工业级，军事级的。」", "汉斯看着你，好像你说了什么他没预料到的话。他慢慢地拿起灭了的烟斗在手指间转了转。「……没有。」他的声音很轻。「我应该说。我看着他走出去的。二十二岁。我当时想——这个年轻人比我知道的多。也许他能查到点什么。」他吞了一下。「我应该告诉他'别查了'。」", "汉斯：「我觉得是吧。他认出那种油的时候眼睛亮了——不像是发现有价值的东西，像是——证实了。」"])
+follow_up3_choice_journal_clues = Array[String](["□ 杜邦查到了燃料来源并确认", "□ 燃料鉴定 —— 军用混合油，指向军方内部盗窃", "□ 燃料鉴定 —— 军用混合油，工业级军事级", "", ""])
+follow_up3_choice_dice_idxs = Array[int]([0, 1, 2, 3])
+follow_up4_lines = Array[String](["汉斯：（他站起来把打火机放在桌子正中间。自己的烟斗收进了口袋。收拾完了——收工）
+「还有什么需要我帮忙的——」
+他顿了一下。没说\"随时来找我\"。他说的是：
+「——如果你是来查东西的。如果你是来查人的——」他轻轻摇头。「我不是那种能帮你查人的人。」", "【莱茵河畔】 他愿意帮你查东西。他不愿意帮你查人。这里面的差别不是怕不怕——是\"东西\"不对任何人开枪，而\"人\"会。", "【铁十字】 他和你差不多大。他失去的人和你在柏林失去的人可能不一样——但失去的结果是一样的。一个人在空房间里做火花塞做到凌晨，因为他不想睡觉。你也一样。", "【普鲁士纪律】 笔录做完了。你有一份技术鉴定意见——足够让杜瓦尔拿着去打报告。你有没有别的想问他的？——关于他自己。不是证人。是个人。"])
+follow_up4_speakers = Array[String](["npc", "npc", "npc", "npc"])
+follow_up4_choice_lines = Array[String](["【莱茵河畔】谢谢", "【帝国幽灵】为什么还在做FZ-7？", "【铁十字】改变主意就找我", "【普鲁士纪律】会通知你出庭", "【对话】今天就到这里"])
+follow_up4_choice_responses = Array[String](["汉斯在门口停了一下。他回头看了一眼桌上的打火机。「如果你们抓到了人——那东西不用还了。杜邦不会来取了。」他背对着你说。然后走了。", "汉斯被这个问题钉在了门口。他的背影停了很久。「因为只要它亮一次——哪怕一次——」他的声音像是从很远的地方送过来的。「就有人看见。有人看见就不是没发生过。哪怕看见它的是个法国人。」他推开门出去。没有回头。", "汉斯在门口回头看了你一眼。那种眼神不是感谢——是一种微妙的、技术性的注视。像在给一个新零件归类。「柏林人——不太一样。」他说完，门关上了。", "汉斯点头：「明白。」没有多一个字。", "汉斯站起来，走向门口，没有回头看那张桌子。"])
+follow_up4_choice_journal_clues = Array[String](["", "□ 汉斯的FZ-7火花塞 —— 宁可亮一次也不愿放弃", "", "", ""])
+follow_up4_choice_dice_idxs = Array[int]([1])
+scene_end_text = "绿罩灯还在烧。汉斯的烟斗印在桌面留下了一个浅灰色的圆——烟斗的印子。你拿起杜邦的打火机举到灯下看那道凹痕。火柴划不动。
+窗外，杜瓦尔的影子在走廊里移动。她在等你的笔录。"
+prompt_label_path = NodePath("../UI/PromptLabel")
+
+[node name="NpcModel" parent="汉斯" unique_id=1859013374 instance=ExtResource("67")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0.90244246, -0.058000088)
+
+[node name="NpcShape" type="CollisionShape3D" parent="汉斯" unique_id=1757675672]
+shape = SubResource("6")
+
+[node name="InteractArea" type="Area3D" parent="汉斯" unique_id=787026013]
+
+[node name="InteractShape" type="CollisionShape3D" parent="汉斯/InteractArea" unique_id=794936363]
+shape = SubResource("10")
+
+[node name="迪特尔" type="StaticBody3D" parent="." unique_id=344430850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 1.05, -15)
+script = ExtResource("2")
+dialogue_box_path = NodePath("../UI/DialogueBox")
+dialogue_label_path = NodePath("../UI/DialogueBox/DialogueScroll/DialogueText")
+dialogue_text = "迪特尔坐在你的对面。他只有二十一二岁，肩膀还没有长开。"
+dialogue_lines = Array[String](["迪特尔：（声音压得很低，几乎是自言自语）
+「我不认识那个兵。我跟仓库没关系。我每天在仓库里搬东西——就是布。帆布。棉布。粗麻。老板姓沃格桑——奥托·沃格桑。他是个做布料的。有人订了布，我就搬。不订——我就不搬。我不认识任何一个法国兵。」
+
+他说得太快了。一个做好了所有答案的人被单独关在一个房间里太久——那些答案在他脑子里已经背得比《圣经》还熟。", "【普鲁士纪律】 迪特尔。二十二岁。科隆本地人。父亲在1891年围城战中死于法军炮火。在奥托·沃格桑的仓库打工——沃格桑是谁？做布料生意的。他在运河下游的工业区有一间仓库。不是纺织品仓库。是什么你还不确定——但一定不是布。", "【枯玫瑰】 他的额头上有雨渍。外面下雨了。他走路过来的。也许有人带他过来——也许是他自己走来的。如果是自己来的，那他可以在很多条巷子里拐弯。但他来了。为什么？因为他知道自己跑了会更可疑——还是因为他想对什么人说出点什么？", "【红色脉搏】 他父亲是被法国人炸死的。他这辈子都恨法国人。但现在在运河边失踪的是七个法国兵。他帮了德国抵抗组织还是没帮？他在沃格桑的仓库打工——如果仓库里进出的是燃料而不是布料，他不可能不知道。"])
+speaker_sequence = Array[String](["npc", "npc", "npc", "npc"])
+player_portrait_path = NodePath("../UI/PortraitPlayer")
+npc_portrait_path = NodePath("../UI/PortraitNpc")
+npc_portrait_texture = ExtResource("66")
+choice_panel_path = NodePath("../UI/ChoicePanel")
+dice_panel_path = NodePath("../UI/DicePanel")
+npc_name = "迪特尔"
+post_complete_text = "迪特尔恶狠狠的盯着你，一言不发。"
+ground_offset = 0.9
+p2_dialogue_lines = Array[String](["迪特尔：（看到进来的是杜瓦尔。制服不一样。肩章不一样。他是法国军官。）
+他整个人硬了。他不再划桌子了。他把手放在膝盖上——像在拘留所等判决。", "【共和国准则】 迪特尔。二十二岁。科隆本地人。父亲死于1891年法军炮火。他在沃格桑的仓库工作——奥托·沃格桑。你听说过这个名字。上周莫罗上尉的军需报告里，有一张供货合同上过了他的名。纺织品供应。不大不小的单子。但那个人从没有在仓库门口接过货。他的仓库在工业区边缘。运河边。一个你看不见但知道那里有东西的位置。", "【三段论】 沃格桑在供应纺织品。
+但沃格桑的仓库比他的纺织品供应量大一倍。
+多出来的空间——要么空了。要么放了别的。
+如果放了别的——那个别的进出仓库的时候，一定有这个常年在仓库里做苦力的德国小子看到。"])
+p2_speaker_sequence = Array[String](["npc", "npc", "npc"])
+p2_choice_lines = Array[String](["【共和国准则 - 简易】
+「除了布——还有什么？」", "【三段论 - 挑战（普通）】
+「你今晚为什么来了？」", "【三色旗 - 挑战（困难）】
+「我可以保证沃格桑不会进来。」"])
+p2_choice_responses = Array[String](["迪特尔抬起头。换了人——但问题还是那种问题。他一时不知道该怎么应付一个直接问\"还有什么\"的法国军官。", "迪特尔被\"七次了\"三个字击中。他的手在膝盖上握成了拳。不是气——是道德压力压到了临界点。他小声说了一句：「不止七次。」——第一道裂缝。迪特尔承认他知道的比失踪案本身更多。", "迪特尔看着你，好像在确认你是不是说了真话。然后他慢慢地、像一个憋了很久的人，说：「……铁桶。」他的声音几乎碎了。「铁皮的桶。堆在仓库最里面的暗间后面。盖子上写了法语。油。」——重大突破：迪特尔承认仓库里有法国军用的燃料桶。"])
+p2_choice_dice_idxs = Array[int]([1, 2])
+p2_choice_response_fail = "迪特尔低下头。「我不是为了法国人来的。」但他没有回到墙里去。他只是不说话——不像之前的那种\"不说\"。"
+p2_follow_up_lines = Array[String](["迪特尔：（不再背诵了。声音还是低，但一种泄洪的感觉——说一半，留一半）
+「……四年了吧。每个月来几桶——有时候更多。是——是法国人。一个法国军官。个子不高。我不认识名字。他来的时候从来不说话。放下就走。」
+
+他吞了一下。
+
+「老板把桶放在暗间里。有人来取。我不知道是谁。我只负责搬——我告诉你这不关我事——我只是一个干活的——我不是——」
+
+他突然停下来。
+
+「——有一天夜里有人来了。不是来取货的。不是平时的人。他们——」他咬住了嘴唇。", "【共和国准则】 \"他们\"。复数。不是沃格桑。不是取燃料的人。新的一方。抵抗组织。铁之心。弗里德里希。他们在半路上截燃料——从他父亲死了以后他反而被这两种力量夹在中间。法军偷燃料出来，沃格桑转卖，铁之心半路劫走。他是中间的人。", "【三段论】 \"他们\"来的那一天——是不是十月二十一日？杜邦失踪的那一夜。迪特尔看到了什么。他说到\"他们\"的时候就停了——因为接下来他要说的不是别人的事。是他自己的选择。"])
+p2_follow_up_speakers = Array[String](["npc", "npc", "npc"])
+p2_follow_up_choice_lines = Array[String](["【共和国准则 - 挑战（普通）】
+通风报信多久了？", "【三段论 - 挑战（极难）】
+十月二十一日桥上发生了什么？"])
+p2_follow_up_choice_responses = Array[String](["迪特尔：「……四年。」他回答了。没说细节——但承认了。一个被夹在两个国家中间的人终于松了第一颗扣子。", "迪特尔彻底停止了所有的防御动作。他的手放在膝盖上，不再动。他的眼睛看着杜瓦尔——满是眼泪，但没有流出来。「……他还在动。我看到了。运河边上——他在动。他不是死了——他还在动——他翻了个身——他的手抓着草——」他的声音断了。「……我没有过去。我没有——」他用手掩住嘴。不是悔恨。是恐怖。——终极真相：迪特尔看到杜邦在运河边还活着，但没有施救。弗里德里希按住他不让他动。杜邦可能不是被勒布朗杀死的——而是在河边慢慢失血而死。"])
+p2_follow_up_choice_dice_idxs = Array[int]([0, 1])
+p2_follow_up_choice_response_fail = "迪特尔摇头：「我不知道您在说什么铁之心。我不知道什么抵抗。」但他的眼睛眨得太快了。
+他又低下头：「我不知道那晚发生了什么。我们不在桥上。」但他全身都在说——你们在。"
+p2_follow_up2_lines = Array[String](["杜瓦尔：（等待。让沉默做完它的工作。）
+「一个叫勒布朗的军士长打完人之后把他丢在了河边。你没有害他——是扔下他的人害的他。你今天来——弗莱探员不明白。但我明白。你不想继续背别人的罪了。」
+
+迪特尔：（把脸从手上拿开）
+「那个军官——那个穿法军制服来送货的——上个月说：'如果出事，谁都跑不了。'他说这话的时候看着我。他只看着我。老板当时在单子上签字。老板没听见。我知道他在告诉我——我是最容易杀的那个。一个德国孤儿死在占领区——没有人会查——」
+
+他深吸了一口气。
+
+「我不能死。我——我不能死在监狱里。我父亲死的没有意义。我死的时候——至少——不能也没有意义。」", "【三色旗】 他说\"我父亲死得没有意义\"。在科隆围城战中无名的死者——在法军炮火下化为灰烬的德国平民。你说1891年的战争不是你的。但你身上的制服是1891年活下来的制服。你口袋里那本法兰西共和国的军法手册——是用1891年的尸体堆出来的。", "【共和国准则】 够了。你现在有迪特尔的口供。你有燃料的来源。你知道沃格桑的仓库位置。你知道勒布朗是送货员。你知道迪特尔在桥边听到了杜邦的挣扎。你还缺最后一环——莫罗。莫罗的名字没有出现在迪特尔的口供里，但他的影子已经在这个房间里笼罩了三十八分钟。穿法军制服的军官，个子不高，不说话。你自己认识这个人。"])
+p2_follow_up2_speakers = Array[String](["npc", "npc", "npc"])
+p2_scene_end_text = "迪特尔站起来的时候腿有点软。他走到门口，回头看了一眼杜瓦尔。
+
+迪特尔：「……你说的。他——沃格桑——不会进来？」
+
+杜瓦尔：「不会。」
+
+迪特尔点了两下头。然后跟着走廊里的宪兵走了。
+
+弗莱站在走廊里。他们隔着门框对视了一秒。
+
+杜瓦尔：「下一个。」
+
+但她没有说\"沃格桑\"。她看着弗莱，眼神里有一种新的东西——是从迪特尔嘴里撬出来的那些话在她脑子里还没有消化。她开始整合了。
+（莫罗的名字还没有说出口。但已经不在话里了——已经在她脑子里了。）"
+p2_post_complete_text = "迪特尔恶狠狠的盯着你，一言不发。"
+choice_lines = Array[String](["【普鲁士纪律 - 简易】
+询问身份信息", "【灰烬喉 - 简易】
+沉默等待，让他不安", "【红色脉搏 - 挑战（困难）】
+「谁让你来的？」", "【枯玫瑰 - 挑战（极难）】
+情感共鸣，你已经看穿他", "【对话】
+「那你认识哪位兵？」"])
+choice_responses = Array[String](["迪特尔一口气背出自己的名字和出生年——像是被人教过。「迪特尔·克雷默。1880年生。第四年了。」", "迪特尔等了五秒。十秒。他的手停止了划桌子。他开始出汗了。", "迪特尔猛地抬头看了你一眼。那一瞬间他不再是一个背诵答案的人了——他是被踩到了。「我不是来帮法国人的——」他说前一半话很大声。后面半句低了下去：「……我也不知道我为什么来。」——微小但真实的裂缝。", "迪特尔停了下来。他的手静止了三秒。第一次。他抬起眼睛看了你——但立刻又低下去。「……我不认识这里任何一个人。」他说。但他没说的是另一句话。你知道。——建立了一点脆弱共振。", "迪特尔摇头：「都不认识。」——但他回答得太整齐了。"])
+choice_dice_idxs = Array[int]([2, 3])
+choice_response_fail = "迪特尔困惑地眨眼睛：「您说什么？」——他还没准备好被人看穿。又或者是——宪兵来叫的。仓库里每一个人都接到了通知。他不敢不来。"
+follow_up_lines = Array[String](["迪特尔：（语速再次加快）
+「我在仓库里。整晚都在。加班——有一批货要赶。老板可以做证。我一直在装布。」", "【红衣逻辑】 \"装布\"。沃格桑的仓库里进货的是布，出货的也是布——那黑市上突然多出来的军用燃料是从哪里冒出来的？如果沃格桑的仓库里装的真是布，汉斯的机械作坊里那瓶\"裁缝布店的灯油\"就应该是灯油。但它不是。一条绳子上打的结已经有三个了——沃格桑，布，灯油。这三个结下面挂着的是燃料。不。是莫罗。", "【普鲁士纪律】 他说\"老板可以做证\"。这有两种可能：沃格桑做了伪证，或者——迪特尔是跟沃格桑对过口供的。不管是哪种——这次审问不会从正面取得突破。", "【莱茵河畔】 他的嘴唇有点干。他一直舔。不是渴——是紧张。你看到过他这种年轻人。在柏林的时候——街头逃跑的小偷也是这副样子。不是不想说。是说完之后不知道还能去哪。他在仓库里住吗？仓库就是他的家。他的家不是沃格桑给的——是沃格桑在他父亲死了之后提供的。一个德国人的孩子在德国人的城市里靠一个倒卖法国物资的德国人活着。这地缘政治比煤油还黏稠。"])
+follow_up_speakers = Array[String](["npc", "npc", "npc", "npc"])
+follow_up_choice_lines = Array[String](["【普鲁士纪律 - 挑战（普通）】
+详细追问布料细节", "【红衣逻辑 - 挑战（困难）】
+「让我自己去查？」", "【铁十字 - 挑战（困难）】
+「你父亲在下面怎么看？」", "【灰烬喉 - 挑战（极难）】
+站起来，走到角落，沉默", "【对话】
+「只是布？」"])
+follow_up_choice_responses = Array[String](["迪特尔开始背：「粗帆布——灰色的。棉——米色的。一共——大概——四十匹。从——从——杜塞尔多夫来的——过运河——」他开始结巴，额头上的汗开始往下淌。他知道的太多了。他编的太快了。他在说谎。——虽未突破，但有明显的谎言指纹。", "迪特尔的嘴唇发抖。「……您不能查。查了您也——」他停住了。他没有说\"不会发现什么\"。他说的是\"您也不能查\"。——他在保护的不是自己。是比他更大的东西。铁之心。", "迪特尔猛地抬起头。他的眼睛红了——不是要哭。是被打中了。「别——别说我爸——」他喘了两下，牙关咬紧。然后他收住了。他把整个身体往后挺，像一个刚被打了一拳的人用指甲抠住背后的墙。他不再说话了。——弗莱打到了核心，但这也是碰壁的开始。迪特尔收得更紧了。", "沉默了四十二秒。迪特尔开始用鞋跟摩擦地面。又过了一个呼吸。他说：「我不知道该怎么办。」声音太小，几乎被他自己吞掉了。——突破了背诵防线。但他没说任何具体信息。是情感的爆发，不是信息的释放。", "迪特尔：「就是布。」——他说的每一个字都像咽下去的铅。"])
+follow_up_choice_response_fail = "迪特尔摇头：「您去查。都是布。」但他的手指又开始划桌子了。
+他又闭上眼睛，抿着嘴唇。他比你想象得能撑。"
+follow_up2_lines = Array[String](["你看着他不说话。
+
+二十出头。没有父母。父亲死在法国人手里。他在沃格桑的仓库里白天搬布、晚上看法国燃料一桶一桶被搬进德国人的厂房。他告诉铁之心。铁之心又告诉他什么？还是他就是铁之心里面最小的那个齿轮？你不是问不出答案——你是问到了他不敢回答的。
+
+他在怕。但他怕的不是你。不是法国宪兵。是一个他在自己的地盘上跟了三年的人。
+
+你没有审他。你审的是一个系统里的人——一个小到可以不负责大错、大到知道所有的错误都在哪里的人。而你是普鲁士警察。你是这个系统的残骸。你不知道怎么把他人撬出来的时候自己不碎。
+
+你站起来。把椅子推回桌子。"])
+follow_up2_speakers = Array[String](["npc"])
+p2_choice_journal_clues = Array[String](["□ 沃格桑仓库 —— 铁桶燃料储存地", "□ 迪特尔承认 —— 法军内部有人在偷运燃料", "□ 迪特尔为铁之心通风报信（四年）"])
+p2_follow_up_choice_journal_clues = Array[String](["□ 那晚迪特尔在桥边 —— 看到杜邦还活着但未施救", "□ 勒布朗 —— \"穿法军制服送货的军官\"（个子不高）", "□ 莫罗的影子 —— 杜瓦尔开始意识到是自己人"])
+prompt_label_path = NodePath("../UI/PromptLabel")
+
+[node name="NpcModel" parent="迪特尔" unique_id=1818978480 instance=ExtResource("69")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0.8585572, -0.05799961)
+
+[node name="NpcShape" type="CollisionShape3D" parent="迪特尔" unique_id=142909964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11120701, 0)
+shape = SubResource("6")
+
+[node name="InteractArea" type="Area3D" parent="迪特尔" unique_id=90305777]
+
+[node name="InteractShape" type="CollisionShape3D" parent="迪特尔/InteractArea" unique_id=974352961]
+shape = SubResource("10")
+
+[node name="莫罗" type="StaticBody3D" parent="." unique_id=716489622]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1.05, -15)
+script = ExtResource("2")
+dialogue_box_path = NodePath("../UI/DialogueBox")
+dialogue_label_path = NodePath("../UI/DialogueBox/DialogueScroll/DialogueText")
+dialogue_text = "亨利·莫罗上尉走进来。四十五岁。法军军需处燃料主管。"
+dialogue_lines = Array[String](["村民：你好，旅行者。"])
+player_portrait_path = NodePath("../UI/PortraitPlayer")
+npc_portrait_path = NodePath("../UI/PortraitNpc")
+npc_portrait_texture = ExtResource("65")
+choice_panel_path = NodePath("../UI/ChoicePanel")
+dice_panel_path = NodePath("../UI/DicePanel")
+npc_name = "莫罗"
+ground_offset = 0.9
+p2_dialogue_lines = Array[String](["莫罗：（安静地，不像一个被捕的犯人）
+「卡米耶。在军需处的走廊上见到你的时候——你总是先敬礼。这是第三次你坐在我对面不用敬礼了。」
+
+他说的不是\"你被捕了\"。他说的是\"不用敬礼\"。", "【共和国准则】 亨利·莫罗。上尉。1893年随第一批占领军进驻科隆。后勤处燃料科。九年。他不是前线的人——他是管仓库的人。一个管仓库的人，七年里偷出了几百桶军用燃料。七条人命的代价。他坐在你对面像一个被抽掉了弹簧的钟。不为自己辩解。也不求饶。", "【三段论】 燃料科的主管每月签单核对库存。莫罗签了七年的库存核对单。他不可能不知道燃料的流向。他也知道他手下的勒布朗在帮他搬货。七个失踪士兵——其中至少三个是他的直接手下。他知道每一个名字。坐在你对面的是整件事的大脑。", "【三色旗】 他是你的上级。你认识他九年。你穿过他签字批发的军靴。你在食堂听他讲过他在巴黎的妻子——肺结核，他在攒钱请最好的医生。食堂里没人说他坏话。一个从不酗酒、从不去军官俱乐部的模范军官。模范到连他的犯罪都穿制服。"])
+p2_speaker_sequence = Array[String](["npc", "npc", "npc", "npc"])
+p2_choice_lines = Array[String](["【共和国准则 - 简易】
+「为什么？」", "【三段论 - 挑战（困难）】
+念出七个名字，摊开七页档案", "【三色旗 - 挑战（极难）】
+「为什么让我来查这个案子？」", "【对话】
+「你有什么要说的？」"])
+p2_choice_responses = Array[String](["莫罗看了你一眼——那种\"你终于问到这个问题\"的眼神。他没有马上回答。", "莫罗看着排成一排的七页纸。他的手没有伸过去翻——只是看。就像一个军官看伤亡名单一样。「……福尔。他是第一个。那天晚上在仓库值夜班——我忘了他是那天的夜班。」他闭了一下眼睛。「不是忘了。我是知道我忘了——但我还是去了。」——承认。没有借口。", "莫罗看着她。眼神里不是愤怒、不是投降——是一种奇怪的、像在看一个很久以前寄出的信被拆开的表情。「因为你是个好宪兵，卡米耶。比我好。我读了你全部的初审报告——你比我讲道理。比我更在乎程序。你是那种查到了真相会把报告交上去的人——不管报告里写的是什么。」他的声音变轻了：「也许我就是想让一个人把报告交上去。一个会交的人。」——莫罗的崩溃起点：他不是被抓住的——他是等一个能抓住他的人等了七年。", "莫罗沉默了很久。「我什么也不说。但我也什么都不抵赖。你来问。我来答。这是我能给的。」——一种古怪的合作。"])
+p2_choice_dice_idxs = Array[int]([1, 2])
+p2_choice_response_fail = "莫罗沉默。他盯着那七张纸，眼神没有离开——但他没有开口。又或者，他只是说：「巧合。你的案子和我的仓库碰在一起的几率——就是巧合。」"
+p2_follow_up_lines = Array[String](["莫罗：（他伸手碰了一下自己左胸口袋那个掉了纽扣的位置——一个无意识的动作。做完之后他的手停在那里，像在衣兜里找遗失的什么东西）
+
+「我知道你认识我九年。但你没见过她。玛丽。玛丽安娜——我的妻子。她在巴黎。1897年的时候——开始咳嗽。先是冬天。后是夏天——不分季节了。医生说是肺病。」
+
+他的手指从衣兜滑到桌上。
+
+「军饷——六百法郎一个月。医生开的药——每个月一千二百法郎。我把巴黎的房子卖了。然后……我不够卖了。」", "【三色旗】 肺病。巴黎的冬天——第八区的那所公寓。他寄钱的那家诊所你不是没有见过。你知道有军官的妻子在巴黎生病。你想到了莫罗。你没想到他在1898年第一次从仓库里搬走一小桶石脑油的时候——手上拿了医生的处方。", "【共和国准则】 军医——他为什么不申请军队的家属医疗补助？补助部门在巴黎。申请流程——你来处理过。慢。官僚。三年得不到批复。他有理由在制度内求助。制度没有回答他。然后他自己动手了。这是犯罪。不是借口。但法律里写的也有\"不合理的拖延\"。", "【三段论】 挪走一桶燃料去卖——救妻子。——卖燃料变成固定的渠道——有人要。有人出价。他赚了比卖一桶更多的钱。——不是贪心。——是尝到了恐惧。——怕被人发现——杀掉第一个知道得太多的守卫。——从此以后多偷一桶燃料的代价不是钱。是人命。"])
+p2_follow_up_speakers = Array[String](["npc", "npc", "npc", "npc"])
+p2_follow_up_choice_lines = Array[String](["【三色旗 - 挑战（普通）】
+「她——现在还在巴黎吗？」", "【共和国准则 - 挑战（困难）】
+「为什么不申请家属医疗补助？」", "【三段论 - 挑战（极难）】
+「赎一个人的命需要这么多桶吗？」", "【对话】
+「继续说。」"])
+p2_follow_up_choice_responses = Array[String](["莫罗的手在桌上放平了。「她在。三月写的信来说是做了个新手术。后来——没有信了。我不知道她是好了一点还是在等我回去。我不能写信给她。——从今年年初开始。我不敢写了。一封从科隆寄出的信上如果有莫罗上尉的署名——可能我还没退役，她先读到我的死讯。」他停了一下。那种停法不是演讲技巧。——一个丈夫对自己所做的最后一件事：连信都不敢寄。", "莫罗：「我写了三次申请。1898、1899、1900。巴黎回复了最后那封——'材料需补充主治医师签字原件'。」他笑了——不是一个犯人笑。是一个人坐在官僚系统底下被压了四年后终于把这句话说给人听的笑。把一只脚踩在你脖子上的人对你说'请把鞋带系好——格式不对'。——制度的冷漠是莫罗的犯罪的一部分原因——但杜瓦尔知道这不是辩护。这是说明。", "莫罗把眼睛闭上了。闭了很久——然后睁开眼睛，眼睛是红的，但干的。「我不知道。我每杀一个人——我都告诉自己，下一个就好。下一个桶卖掉就可以收手了。下一个。下一个。」他的声音变轻，轻到审讯室里只听得到灯芯的滋滋声。「七年。人会把任何不想面对的未来变成三个字。'下一个'。然后下一个变成了下一个人。下一个守夜的兵。下一个做账的文书。下一个从河里被捞上来的——我自己。」——莫罗的自我剖析。核心时刻。", "莫罗缓缓地点了一下头——是在对自己。然后继续说。"])
+p2_follow_up_choice_dice_idxs = Array[int]([0, 1, 2])
+p2_follow_up_choice_response_fail = "莫罗轻轻地摇了摇头。没有回答。不是拒绝。是回答不了。他没有展开。"
+p2_follow_up2_lines = Array[String](["莫罗：（长时间的沉默。桌子上的七页纸——最右边那一张。杜邦的名字。最年轻的。二十二岁。）
+
+「你知道最……难以忍受的是什么吗？」
+
+他抬头看着杜瓦尔。不是防守——是提问。
+
+「杜邦——他查了我两个月的仓库记录。他找到了出货日和库存日之间的差额。他用的是我教他的方法。——我不在的时候，管仓库的就是他。」
+
+「我教的。我批了他的轮值申请。我把他调来仓库。因为他看起来——想做点什么。别的兵聊天、打牌、等着回巴黎。他坐在那里——翻仓库进货单。」
+
+莫罗的声音变轻——不是小声。是没力气了。
+
+「他在学。他是我的学生——他是那堆燃料档案里自然长出来的唯一的、真正守法的人。然后我杀了他。」", "【三色旗】 杜邦叫了他三个月的\"上尉\"。他实习报告上的签字是莫罗。你翻看过杜邦的档案——在他的个人物品里有一张画着仓库平面图的草稿纸，背面写着法文——\"上尉说出口要和入口分开登记\"。那是莫罗手把手教他的。", "【共和国准则】 罪——不以原因为转移。你不知道是该把这句话在心里念一遍，还是放在桌上。你坐在他对面——他在说\"是我教他的\"。不是求情。不是狡辩。是一个站不稳的人在被扶正之后把剩下的真相倒给你。", "【三段论】 妻子。制度。贪婪。恐惧。但现在你听到的不是他们中的任何一个。是他的衣钵。父亲没有儿子——老师亲手杀了弟子。他流的不是同情之泪。是遗产被烧毁的泪。"])
+p2_follow_up2_speakers = Array[String](["npc", "npc", "npc", "npc"])
+p2_follow_up2_choice_lines = Array[String](["【三色旗 - 挑战（极难）】
+「他管你叫上尉。你跟他说——'出口要和入口分开登记'。你在他身上看到了什么——一个能继承你仓库的孩子？还是一个你迟早要杀掉的学生？」", "【共和国准则 - 简易】
+「莫罗上尉。你在认罪。我要的不是认罪——我要的是完整的时间线、地点、涉案人员和动机。杜邦是最后一个。前六个也是你说的。包括我从来不知道的那几个——皮埃尔·福尔被勒布朗从背后勒死。请全部复述一遍。现在。正式记录在案。」", "【对话】
+「他死的时候——你在场吗。」"])
+p2_follow_up2_choice_responses = Array[String](["莫罗看着杜瓦尔。那句话在他嘴里留了很久。「……他像我没来得及有过的儿子。」然后他把声音压到了最低——低到门外的弗莱听不见。「我不值得回答你那个问题。因为不管我在他身上看到了什么——我杀的都是同一个结果。」——莫罗和杜邦之间关系的全部真相。", "莫罗坐直了。像一个士兵接受任务一样——以同样机械的语调开始复述七个受害者的名字、地点、时间和勒布朗的作案方式。他说了整整四分钟，没有停。最后说到杜邦：「运河边——他从营房出来往沃格桑的仓库方向走。勒布朗在桥上堵了他。他说'上尉知道了'——勒布朗说'他想说什么'。」莫罗闭上眼。「他不知道勒布朗是什么意思。他到我死的那一刻都不知道自己想说什么。」——完整的认罪口供。", "莫罗：「不在。」然后安静了一下。「我在仓库里等。等到勒布朗来——身上有痕迹。」他没有说更多。但他在门口等的时候抽了几根烟——你可以从他的沉默里看到。"])
+p2_follow_up2_choice_response_fail = "莫罗没有回答。他只是摇了摇头。不是否定的摇头——是\"我不知道怎么说\"的摇头。"
+p2_follow_up3_lines = Array[String](["杜瓦尔：（推一张纸到他面前——空白的纸。一支笔。）
+
+「勒布朗军士长在走廊对面的房间里。他现在在供述。弗莱探员从柏林过来不是查失踪案的——他是被派来搅局政治棋盘的。但这件事现在已经不是政治了——上尉。当我走出这道门，我会走进三道门——一道是值日军官的办公室，一道是上校的办公室，一道是军事法庭。」
+
+她把手从纸笔上拿开。
+
+「你现在写的——是你最后一份自由意志下的陈述。我不会给你建议。我只给你两分钟时间。」
+
+莫罗：（他的手拿起笔。翻了一面，没写。翻过来，还是没写。他看着白纸，像在看一个从来没见过的方向）
+
+「卡米耶——你有没有想过。我做的这么多事——偷油、卖油、杀人——没有一件让她的病好了哪怕一天。我做了七年的事——她的病是你想象不到的最安静的东西。你想象不到的安静。它不听钱的声音。」
+
+他放下笔。
+
+「但我不后悔偷第一桶油。不是给自己开脱——你已经拿住了勒布朗，我全都认。我只是告诉你——第一桶。我不后悔。后面六个人是错的。但第一桶——那个面对一个活不下去的妻子和一个看不见的制度的人——他没有别的路了。」
+
+他拿起笔，开始写。"])
+p2_follow_up3_speakers = Array[String](["npc"])
+p2_follow_up3_choice_lines = Array[String](["等待他写完……"])
+p2_follow_up3_choice_responses = Array[String]([""])
+p2_follow_up4_lines = Array[String](["莫罗把写好的陈述推到桌子中间。他站起来。手铐在椅子边沿碰了一下。
+
+莫罗：「还有一件事。」
+
+他在杜瓦尔面前站定。审讯室里很安静，安静得能听见灯芯燃烧的声音。
+
+「我听过你在军官食堂说的话——大概两年前。有人在嘲笑科隆的德国人——说他们是\"不听话的贱民\"。你站起来说：他们的国家失败了，但他们的不听话——跟我们没关系。那天你没有穿制服——你穿便装。我第一次觉得——这个人不是以法国军官的身份在科隆活着。」
+
+他顿了一下。
+
+「我想让你知道——在我毁了的东西里面。你是其中一个。」
+
+他说完走向门口。宪兵拉开门。走廊里的白色灯光从门框涌进来冲淡了审讯室的绿光。
+
+弗莱在走廊里。两个男人对视了很短的一个瞬间。没有对话——莫罗被带走了。弗莱看着他的背影消失在走廊尽头。然后转头看杜瓦尔。"])
+p2_follow_up4_speakers = Array[String](["npc"])
+p2_follow_up4_choice_lines = Array[String](["……"])
+p2_follow_up4_choice_responses = Array[String]([""])
+p2_scene_end_text = "审讯室空了一半。桌上的七页纸还在原来的位置排着。莫罗的亲笔陈述放在中间。还有一支笔。
+
+绿罩灯跳了最后几下——油快烧尽了。杜瓦尔没有站起来。她拿出一根烟——在烟盒里摸到最后一根——但没点。她的打火机也不在她口袋里了。谁把那东西拿走了——或者她自己扔掉了。
+
+弗莱站在门外，倚着门框。
+
+他们都没有说话。
+
+然后杜瓦尔站起来。把七页纸收起来。一张一张叠对齐。动作很慢——像在整理一个案子，也像在叠别人的悼词。
+
+她把莫罗的陈述放在最上面。走出门口时，弗莱让开了半步。
+
+杜瓦尔：「我需要——空气。」
+
+————————————————————
+
+油灯灭了。房间里唯一的光源是走廊里那盏白色的煤气灯——从半开的门缝里进来，在桌面上铺了一条窄窄的光带。
+
+椅子是空的。桌上没有纸。没有烟斗印。没有打火机。
+
+七页纸、打火机、笔、火柴、烟斗印。都被杜瓦尔带走了——物证归档，口供留存。这个房间在一夜之内做了四面墙的见证，现在回到了它本来的样子。一个被摘走了相框的旧警察局的空房间。
+
+只有墙上的深色方形还留着。即使没有灯也能看见——它比周围的墙浅一点，像过去在那面墙上已经活了太多年，就算把它拿走了，它也活着。
+
+弗莱走进来。他应该在走廊里等杜瓦尔回来。她出去抽了烟，也许不是烟——也许她需要一个看不到法国制服的地方。她是去呼吸的。
+
+他没有等。他推门进来——不是因为有事。是因为这个房间里有他需要的东西。
+
+他站了一会儿。走到桌子的那一边——不是警察坐的这边。是证人们坐过的那一边。四个证人，一天之内。他拉出了那把椅子。椅腿刮过地面的声音比白天轻。
+
+然后他坐下了。坐在证人坐的位置上。
+
+他把手放在桌上——看着桌子对面空着的椅子。那是他自己刚才坐着的位置。
+
+坐在证人席上看警察的位子——是空的。你今天看到的四个德国人——卡尔怕你，汉斯欣赏了你一部分，迪特尔信不过你，莫罗与你无关。你是柏林来的探员。你带着一本警察手册和一个别人替你订好的任务。
+
+但任务不是这个案子。任务是政治。柏林想让你在莱茵河左岸找到一点可以撬动的东西——法军腐败的证据，占领区内耗的证据——然后把它带回柏林变成外交筹码。
+
+你找到了。法军后勤上尉七年偷窃军用燃料、七条人命。你坐在证人席上——你已经有了那封信。这封信可以递给柏林，也可以递给杜瓦尔。
+
+信在杜瓦尔的抽屉里——你送给她的是副本。原件在你上衣内侧口袋里。
+
+你今晚就可以发电报。
+
+【红衣逻辑】 如果把证据交给柏林：德国获得外交筹码。法国占领军的合法性被动摇。但代价是什么？代价是莫罗的案子变成政治工具——卡尔的证词被德国报纸断章取义，汉斯的技术鉴定被译成法文、英文、俄文，贴上标签。迪特尔会被审判——作为证人还是共犯取决于外交风向。莫罗的妻子会读到丈夫的名字被印在别人国家的头版上。杜邦——他倒是什么都不会知道了。
+
+【帝国幽灵】 你记得1891年科隆围城战结束时的那些报纸。第一版都印着巨大的标题。没有人写最后一版。最后一版都是小号字体，背面角落里贴着阵亡者的名字。你念了太多那些名字。你不想再念了。
+
+【铁十字】 这不是德国和法国的事。不是。这是一个人为了救另一个人偷了一桶油——偷到最后自己不再是人。你从柏林出发的时候带的是命令。军人在柏林等你交上那封信。但你没有穿制服——他们说你不用穿。也许他们不想让穿制服的人做这件事。也许他们想让一个看起来不像军人的人把一份像政治的文件交给一个被当成政治的人。你。坐在这张凳子上——你不需要做选择。你需要不做选择。把信放在杜瓦尔桌上，然后——结束就是了。"
+p2_post_complete_text = "莫罗已经不在这里了。椅子上只留下手铐在边沿碰过的痕迹。"
+prompt_label_path = NodePath("../UI/PromptLabel")
+
+[node name="NpcModel" parent="莫罗" unique_id=1631370197 instance=ExtResource("70")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 1.0547926, -0.058000088)
+
+[node name="NpcShape" type="CollisionShape3D" parent="莫罗" unique_id=1720064630]
+shape = SubResource("6")
+
+[node name="InteractArea" type="Area3D" parent="莫罗" unique_id=1532401838]
+
+[node name="InteractShape" type="CollisionShape3D" parent="莫罗/InteractArea" unique_id=475081717]
+shape = SubResource("10")
+
+[node name="PickableItem_InteractArea#InteractShape" type="CollisionShape3D" parent="." unique_id=1211881590]
+shape = SubResource("20")
+
+[node name="Door" type="StaticBody3D" parent="." unique_id=1497210452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 1.46, -7.38)
+script = ExtResource("36")
+bubble_panel_path = NodePath("../UI/BubbleWrapper")
+prompt_label_path = NodePath("../UI/PromptLabel")
+
+[node name="DoorVisual" type="MeshInstance3D" parent="Door" unique_id=5861949]
+transform = Transform3D(0.70432454, 0, -0.70987815, 0, 1, 0, 0.70987815, 0, 0.70432454, 0, 0, 0)
+mesh = SubResource("40")
+
+[node name="DoorShape" type="CollisionShape3D" parent="Door" unique_id=27423577]
+shape = SubResource("41")
+
+[node name="InteractArea" type="Area3D" parent="Door" unique_id=2102917691]
+
+[node name="InteractShape" type="CollisionShape3D" parent="Door/InteractArea" unique_id=758104701]
+shape = SubResource("10")
+
+[node name="PauseManager" type="Node" parent="." unique_id=1194358890]
+script = ExtResource("3")
+pause_overlay_path = NodePath("../UI/PauseOverlay")
+settings_panel_path = NodePath("../UI/SettingsMenu/SettingsPanel")
+crosshair_path = NodePath("../UI/Crosshair")
+crosshair_circle_path = NodePath("../UI/CrosshairCircle")
+skill_panel_path = NodePath("../UI/SkillPanel")
+inventory_panel_path = NodePath("../UI/InventoryPanel")
+journal_panel_path = NodePath("../UI/JournalPanel")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=98989873]
+
+[node name="TopBar" type="Panel" parent="UI" unique_id=1373429279]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("53")
+journal_panel_path = NodePath("../JournalPanel")
+inventory_panel_path = NodePath("../InventoryPanel")
+skill_panel_path = NodePath("../SkillPanel")
+
+[node name="Bar" type="MarginContainer" parent="UI/TopBar" unique_id=1000990928]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UI/TopBar/Bar" unique_id=507860265]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="BtnInventory" type="Button" parent="UI/TopBar/Bar/HBox" unique_id=2027621728]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "背包 [B]"
+
+[node name="BtnSkill" type="Button" parent="UI/TopBar/Bar/HBox" unique_id=1207337260]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "技能 [TAB]"
+
+[node name="BtnJournal" type="Button" parent="UI/TopBar/Bar/HBox" unique_id=1553133786]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "日志 [J]"
+
+[node name="Crosshair" type="Control" parent="UI" unique_id=1407088632]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CrosshairH" type="ColorRect" parent="UI/Crosshair" unique_id=1429246467]
+layout_mode = 0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -1.0
+offset_bottom = 1.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0.9)
+
+[node name="CrosshairV" type="ColorRect" parent="UI/Crosshair" unique_id=2026868480]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = 1.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0.9)
+
+[node name="CrosshairCircle" type="Panel" parent="UI" unique_id=423420873]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("11")
+
+[node name="CrosshairRedX" type="Control" parent="UI" unique_id=1535543046]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RedX1" type="ColorRect" parent="UI/CrosshairRedX" unique_id=719158532]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -1.0
+offset_right = 7.0
+offset_bottom = 1.0
+rotation = 0.785398
+mouse_filter = 2
+color = Color(0.9, 0.15, 0.1, 1)
+
+[node name="RedX2" type="ColorRect" parent="UI/CrosshairRedX" unique_id=1269664375]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -1.0
+offset_right = 7.0
+offset_bottom = 1.0
+rotation = -0.785398
+mouse_filter = 2
+color = Color(0.9, 0.15, 0.1, 1)
+
+[node name="PortraitPlayer" type="TextureRect" parent="UI" unique_id=1462207162]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -480.0
+offset_right = 200.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SkillIcon" type="TextureRect" parent="UI" unique_id=86796086]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -600.0
+offset_bottom = -360.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PortraitNpc" type="TextureRect" parent="UI" unique_id=1677185313]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -480.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PauseOverlay" type="ColorRect" parent="UI" unique_id=450243465]
+process_mode = 3
+visible = false
+z_index = 100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+color = Color(0, 0, 0, 0.5)
+
+[node name="PauseLabel" type="Label" parent="UI/PauseOverlay" unique_id=2031012076]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -12.0
+offset_right = 160.0
+offset_bottom = 12.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "已暂停 - 按 Esc 继续"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsButton" type="Button" parent="UI/PauseOverlay" unique_id=1935557513]
+process_mode = 3
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = 24.0
+offset_right = 80.0
+offset_bottom = 54.0
+text = "设置"
+
+[node name="PromptLabel" type="Label" parent="UI" unique_id=1409388394]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -50.0
+offset_right = 220.0
+offset_bottom = -16.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "按下 F 或者 右键 交互"
+
+[node name="SettingsMenu" type="Control" parent="UI" unique_id=1371505094]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4")
+panel_path = NodePath("SettingsPanel")
+open_button_path = NodePath("../PauseOverlay/SettingsButton")
+close_button_path = NodePath("SettingsPanel/CloseButton")
+pause_overlay_path = NodePath("../PauseOverlay")
+volume_slider_path = NodePath("SettingsPanel/VolumeSlider")
+volume_value_label_path = NodePath("SettingsPanel/VolumeValue")
+resolution_option_path = NodePath("SettingsPanel/ResolutionOption")
+display_mode_option_path = NodePath("SettingsPanel/DisplayModeOption")
+apply_button_path = NodePath("SettingsPanel/ApplyButton")
+confirm_dialog_path = NodePath("ConfirmDialog")
+
+[node name="SettingsPanel" type="Panel" parent="UI/SettingsMenu" unique_id=314979877]
+visible = false
+z_index = 110
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -240.0
+offset_right = 280.0
+offset_bottom = 260.0
+
+[node name="SettingsTitle" type="Label" parent="UI/SettingsMenu/SettingsPanel" unique_id=2054356096]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 240.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "设置"
+
+[node name="VolumeLabel" type="Label" parent="UI/SettingsMenu/SettingsPanel" unique_id=2022293280]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 56.0
+offset_right = 120.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "音量"
+
+[node name="ResolutionLabel" type="Label" parent="UI/SettingsMenu/SettingsPanel" unique_id=338303311]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 90.0
+offset_right = 120.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "分辨率"
+
+[node name="ResolutionOption" type="OptionButton" parent="UI/SettingsMenu/SettingsPanel" unique_id=693719781]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 90.0
+offset_right = 420.0
+offset_bottom = 114.0
+
+[node name="DisplayModeLabel" type="Label" parent="UI/SettingsMenu/SettingsPanel" unique_id=1923024645]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 124.0
+offset_right = 120.0
+offset_bottom = 148.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "显示模式"
+
+[node name="DisplayModeOption" type="OptionButton" parent="UI/SettingsMenu/SettingsPanel" unique_id=729098827]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 124.0
+offset_right = 420.0
+offset_bottom = 148.0
+
+[node name="VolumeSlider" type="HSlider" parent="UI/SettingsMenu/SettingsPanel" unique_id=383814513]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 56.0
+offset_right = 420.0
+offset_bottom = 80.0
+max_value = 1.0
+step = 0.01
+value = 0.8
+
+[node name="VolumeValue" type="Label" parent="UI/SettingsMenu/SettingsPanel" unique_id=1244363245]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 56.0
+offset_right = 500.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "80%"
+
+[node name="CloseButton" type="Button" parent="UI/SettingsMenu/SettingsPanel" unique_id=1506729972]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 426.0
+offset_right = 420.0
+offset_bottom = 456.0
+text = "关闭"
+
+[node name="ApplyButton" type="Button" parent="UI/SettingsMenu/SettingsPanel" unique_id=1326963523]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 426.0
+offset_right = 280.0
+offset_bottom = 456.0
+disabled = true
+text = "应用"
+
+[node name="ConfirmDialog" type="ConfirmationDialog" parent="UI/SettingsMenu" unique_id=849005685]
+title = "未保存的设置"
+ok_button_text = "保存"
+dialog_text = "设置已更改，是否保存？"
+cancel_button_text = "取消"
+
+[node name="DialogueBox" type="Panel" parent="UI" unique_id=1077198442]
+visible = false
+anchors_preset = -1
+anchor_left = 0.1667
+anchor_top = 0.15
+anchor_right = 0.8333
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NamePlayer" type="Label" parent="UI/DialogueBox" unique_id=1603824703]
+layout_mode = 0
+offset_left = 24.0
+offset_top = -32.0
+offset_right = 200.0
+offset_bottom = -8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "主角"
+
+[node name="NameNpc" type="Label" parent="UI/DialogueBox" unique_id=117927193]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_top = -32.0
+offset_right = -24.0
+offset_bottom = -8.0
+theme_override_colors/font_color = Color(1, 1, 0.6, 1)
+text = "村民"
+horizontal_alignment = 2
+
+[node name="DialogueScroll" type="ScrollContainer" parent="UI/DialogueBox" unique_id=283713744]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 28.0
+offset_right = -24.0
+offset_bottom = -24.0
+follow_focus = true
+
+[node name="DialogueText" type="RichTextLabel" parent="UI/DialogueBox/DialogueScroll" unique_id=974192485]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(1, 0.9, 0.6, 1)
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "村民：你好，旅行者。"
+scroll_following = true
+
+[node name="ChoicePanel" type="Panel" parent="UI" unique_id=1481069937]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -160.0
+offset_right = 240.0
+offset_bottom = 160.0
+
+[node name="ChoiceTitle" type="Label" parent="UI/ChoicePanel" unique_id=2106004232]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = 12.0
+offset_right = 160.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "做出选择"
+horizontal_alignment = 1
+
+[node name="ChoiceOption1" type="Button" parent="UI/ChoicePanel" unique_id=1504115726]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 46.0
+offset_right = 200.0
+offset_bottom = 72.0
+
+[node name="ChoiceOption2" type="Button" parent="UI/ChoicePanel" unique_id=106105409]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 80.0
+offset_right = 200.0
+offset_bottom = 106.0
+
+[node name="ChoiceOption3" type="Button" parent="UI/ChoicePanel" unique_id=254709060]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 114.0
+offset_right = 200.0
+offset_bottom = 140.0
+
+[node name="ChoiceOption4" type="Button" parent="UI/ChoicePanel" unique_id=2014122511]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 148.0
+offset_right = 200.0
+offset_bottom = 174.0
+
+[node name="ChoiceOption5" type="Button" parent="UI/ChoicePanel" unique_id=286796533]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 182.0
+offset_right = 200.0
+offset_bottom = 208.0
+
+[node name="ChoiceExit" type="Button" parent="UI/ChoicePanel" unique_id=1733961667]
+visible = false
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 90.0
+offset_right = 120.0
+offset_bottom = 120.0
+text = "退出"
+
+[node name="DicePanel" type="Panel" parent="UI" unique_id=711760656]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -180.0
+offset_right = 340.0
+offset_bottom = 290.0
+
+[node name="Dice1" type="TextureRect" parent="UI/DicePanel" unique_id=2038665271]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -130.0
+offset_right = -70.0
+offset_bottom = -10.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Dice2" type="TextureRect" parent="UI/DicePanel" unique_id=17788749]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -130.0
+offset_right = 70.0
+offset_bottom = -10.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Dice3" type="TextureRect" parent="UI/DicePanel" unique_id=862432078]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 90.0
+offset_top = -130.0
+offset_right = 210.0
+offset_bottom = -10.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="DiceRollLabel" type="Label" parent="UI/DicePanel" unique_id=866918678]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 5.0
+offset_right = 200.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "投掷中..."
+horizontal_alignment = 1
+
+[node name="DiceVerdictLabel" type="Label" parent="UI/DicePanel" unique_id=1434904540]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 50.0
+offset_right = 200.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(1, 1, 0.5, 1)
+horizontal_alignment = 1
+
+[node name="DiceContinueButton" type="Button" parent="UI/DicePanel" unique_id=1082460754]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_top = 230.0
+offset_right = 60.0
+offset_bottom = 265.0
+text = "继续"
+
+[node name="SkillPanel" type="Panel" parent="UI" unique_id=2065630182]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = -40.0
+script = ExtResource("34")
+
+[node name="BgTexture" type="TextureRect" parent="UI/SkillPanel" unique_id=1999608016]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 50.0
+mouse_filter = 2
+texture = ExtResource("77")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="UI/SkillPanel" unique_id=1396353437]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.85, 0.8, 0.55, 1)
+theme_override_font_sizes/font_size = 22
+text = "技能"
+horizontal_alignment = 1
+
+[node name="Grid" type="GridContainer" parent="UI/SkillPanel" unique_id=418467322]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.45
+offset_left = 50.0
+offset_top = 60.0
+offset_bottom = -20.0
+grow_vertical = 2
+
+[node name="Detail" type="Panel" parent="UI/SkillPanel" unique_id=563980505]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.5
+anchor_right = 0.95
+anchor_bottom = 1.0
+offset_top = 20.0
+offset_bottom = -20.0
+grow_vertical = 2
+
+[node name="DetailCircle" type="ColorRect" parent="UI/SkillPanel/Detail" unique_id=453500776]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_top = 20.0
+offset_right = 55.0
+offset_bottom = 130.0
+grow_horizontal = 2
+color = Color(0.12, 0.1, 0.08, 0.9)
+
+[node name="CircleLabel" type="Label" parent="UI/SkillPanel/Detail/DetailCircle" unique_id=263174001]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9, 0.85, 0.6, 1)
+theme_override_font_sizes/font_size = 36
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DetailName" type="Label" parent="UI/SkillPanel/Detail" unique_id=237293489]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 145.0
+offset_right = 120.0
+offset_bottom = 175.0
+theme_override_colors/font_color = Color(1, 0.9, 0.5, 1)
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+
+[node name="DetailDesc" type="Label" parent="UI/SkillPanel/Detail" unique_id=1024837770]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 190.0
+offset_right = 120.0
+offset_bottom = 280.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.7, 0.65, 0.55, 1)
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="DetailXP" type="Label" parent="UI/SkillPanel/Detail" unique_id=1525856446]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 240.0
+offset_right = 80.0
+offset_bottom = 265.0
+theme_override_colors/font_color = Color(0.6, 0.55, 0.45, 1)
+horizontal_alignment = 1
+
+[node name="InventoryPanel" type="Panel" parent="UI" unique_id=762146544]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = 80.0
+offset_right = -80.0
+offset_bottom = -80.0
+script = ExtResource("35")
+
+[node name="BgTexture" type="TextureRect" parent="UI/InventoryPanel" unique_id=390088958]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.667
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("76")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="UI/InventoryPanel" unique_id=1771052273]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 10.0
+offset_right = 40.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "背包"
+horizontal_alignment = 1
+
+[node name="Grid" type="GridContainer" parent="UI/InventoryPanel" unique_id=910420856]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1667
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 0.7
+
+[node name="Detail" type="Panel" parent="UI/InventoryPanel" unique_id=123561835]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = 50.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Preview" type="TextureRect" parent="UI/InventoryPanel/Detail" unique_id=1401557630]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 150.0
+grow_horizontal = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ItemName" type="Label" parent="UI/InventoryPanel/Detail" unique_id=156891920]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 165.0
+offset_right = 80.0
+offset_bottom = 190.0
+theme_override_colors/font_color = Color(1, 0.9, 0.5, 1)
+horizontal_alignment = 1
+
+[node name="ItemDesc" type="Label" parent="UI/InventoryPanel/Detail" unique_id=1934768538]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 200.0
+offset_right = 80.0
+offset_bottom = -20.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BubbleWrapper" type="Control" parent="UI" unique_id=35932635]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+
+[node name="BubblePanel" type="Panel" parent="UI/BubbleWrapper" unique_id=1877224906]
+layout_mode = 0
+mouse_filter = 1
+
+[node name="Text" type="RichTextLabel" parent="UI/BubbleWrapper/BubblePanel" unique_id=1285330767]
+layout_mode = 0
+theme_override_colors/default_color = Color(1, 1, 0.9, 1)
+bbcode_enabled = true
+fit_content = true
+
+[node name="Options" type="HBoxContainer" parent="UI/BubbleWrapper" unique_id=918009224]
+layout_mode = 0
+alignment = 1
+
+[node name="JournalPanel" type="Panel" parent="UI" unique_id=1685223810]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = 80.0
+offset_right = -120.0
+offset_bottom = -80.0
+script = ExtResource("52")
+clue_container_path = NodePath("Scroll/Clues")
+reason_btn_path = NodePath("ReasonBtn")
+result_label_path = NodePath("ResultLabel")
+ai_api_key = "sk-5203dae124e64cb788fa9b72f06ce2ac"
+
+[node name="BgTexture" type="TextureRect" parent="UI/JournalPanel" unique_id=1993929129]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("75")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="UI/JournalPanel" unique_id=243999747]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_top = 12.0
+offset_right = 60.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.85, 0.8, 0.55, 1)
+theme_override_font_sizes/font_size = 22
+text = "日志"
+horizontal_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="UI/JournalPanel" unique_id=570252034]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 90.0
+offset_top = 50.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Clues" type="VBoxContainer" parent="UI/JournalPanel/Scroll" unique_id=1096136337]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="ReasonBtn" type="Button" parent="UI/JournalPanel" unique_id=1696015295]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = -30.0
+offset_right = -20.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "推理"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="UI/JournalPanel" unique_id=1917911717]
+
+[node name="ResultLabel" type="Label" parent="UI/JournalPanel" unique_id=669532637]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -60.0
+offset_right = -100.0
+offset_bottom = -8.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.7, 1)
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="OpeningDialog" type="Panel" parent="UI" unique_id=1862810609]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("60")
+
+[node name="BlackOverlay" type="ColorRect" parent="UI/OpeningDialog" unique_id=1409912377]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Scroll" type="ScrollContainer" parent="UI/OpeningDialog" unique_id=1054838805]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.666
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = 80.0
+offset_right = -36.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="UI/OpeningDialog/Scroll" unique_id=1315472830]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_following = true
+
+[node name="ContinueHint" type="Label" parent="UI/OpeningDialog" unique_id=791691730]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.6, 0.6, 0.5, 1)
+theme_override_font_sizes/font_size = 13
+text = "点击继续"
+horizontal_alignment = 2

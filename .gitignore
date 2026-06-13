@@ -1,0 +1,26 @@
+# Godot 4+ specific ignores
+.godot/
+
+# Build exports (not needed in repo)
+build/
+
+# Imported translations (automatically generated from CSV files)
+/*.translation
+
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config file
+[Dd]esktop.ini
+
+# macOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Thumbnails
+._*

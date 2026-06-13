@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bf6v6eggt11hk"
+path="res://.godot/imported/打开背包 日志 技能.mp3-a330ebd2f376245388af97ffe5f11a85.mp3str"
+
+[deps]
+
+source_file="res://音效/打开背包 日志 技能.mp3"
+dest_files=["res://.godot/imported/打开背包 日志 技能.mp3-a330ebd2f376245388af97ffe5f11a85.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
