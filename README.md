@@ -36,6 +36,22 @@ docker run -p 8080:80 docker.cnb.cool/ruoshui67/xingwangzhiku:latest
 - **Godot 4.6.2** stable
 - 编辑器路径已在 `.vscode/settings.json` 中配置
 
+### 导出 Web 版本
+1. Godot 编辑器 → 项目 → 导出
+2. 选择 HTML5 → 导出到 `build/web/`
+
+### 部署到 CloudBase（腾讯云静态托管）
+
+#### 方式 A：CodeBuddy 集成（推荐）
+1. Godot 导出 HTML5 → `build/web/`
+2. CodeBuddy → CloudBase 集成 → 上传 `build/web/` 到 `/`
+3. 自动获得公网访问地址
+
+#### 方式 B：手动上传
+1. 打开 [CloudBase 控制台](https://tcb.cloud.tencent.com/dev?envId=abcd-1111-d7g8ch5d2ffbe4f3a#/static-hosting)
+2. 静态网站托管 → 上传 `build/web/` 所有文件
+3. 访问 `https://abcd-1111-d7g8ch5d2ffbe4f3a-1443037185.tcloudbaseapp.com/`
+
 ### 本地构建 Docker
 
 ```bash
@@ -43,20 +59,8 @@ docker run -p 8080:80 docker.cnb.cool/ruoshui67/xingwangzhiku:latest
 # 2. 构建并运行
 docker build -t xingwangzhiku .
 docker run -p 8080:80 xingwangzhiku
+# 浏览器打开 http://localhost:8080
 ```
-
----
-
-## 🛠️ 开发说明
-
-### 环境要求
-- **Godot 4.6.2** stable
-- 编辑器路径已在 `.vscode/settings.json` 中配置
-
-### 导出 Web 版本
-1. Godot 编辑器 → 项目 → 导出
-2. 选择 HTML5 → 导出到 `build/web/`
-3. 运行 `docker build -t xingwangzhiku . && docker run -p 8080:80 xingwangzhiku` 本地预览
 
 ### 注意
 - `.pck` 文件较大（~430MB），首次加载较慢
