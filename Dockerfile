@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM docker.m.daocloud.io/library/nginx:alpine
 
 # 复制 Godot HTML5 导出文件
 COPY build/web/ /usr/share/nginx/html/
