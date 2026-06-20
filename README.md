@@ -4,18 +4,15 @@
 
 ---
 
-## 🎮 在线演示
+## 🎮 评委 / 协作者预览（3 种方式）
 
-| 方式 | 地址 |
-|------|------|
-| **CloudBase 静态托管** | [点击试玩](https://abcd-1111-d7g8ch5d2ffbe4f3a-1443037185.tcloudbaseapp.com/) |
-| **CNB 预览启动** | 在 CNB 平台启动 `.cnb.yml` 的 Launch 即可预览 |
+### 方式 ①：浏览器直接打开（无需任何工具）
+
+👉 **[点击试玩](https://abcd-1111-d7g8ch5d2ffbe4f3a-1443037185.tcloudbaseapp.com/)**
 
 ---
 
-## 🐳 Docker 部署（评委/协作者可用）
-
-### 方式一：使用预构建镜像（推荐）
+### 方式 ②：Docker 一键启动（需安装 Docker）
 
 ```bash
 docker pull docker.cnb.cool/ruoshui67/xingwangzhiku:latest
@@ -23,7 +20,23 @@ docker run -p 8080:80 docker.cnb.cool/ruoshui67/xingwangzhiku:latest
 # 浏览器打开 http://localhost:8080
 ```
 
-### 方式二：本地构建
+---
+
+### 方式 ③：CNB 平台 Launch（比赛用）
+
+> Fork 仓库 → 进入仓库 → 云原生构建 → 检测到 `.cnb.yml` → 点击启动 → 获得预览地址
+
+镜像地址使用**常量**（非变量），评委 Fork 后始终拉取本仓库的公共镜像，不受 Fork 影响。
+
+---
+
+## 🛠️ 开发说明
+
+### 环境要求
+- **Godot 4.6.2** stable
+- 编辑器路径已在 `.vscode/settings.json` 中配置
+
+### 本地构建 Docker
 
 ```bash
 # 1. 先在 Godot 中导出 HTML5 到 build/web/
@@ -31,14 +44,6 @@ docker run -p 8080:80 docker.cnb.cool/ruoshui67/xingwangzhiku:latest
 docker build -t xingwangzhiku .
 docker run -p 8080:80 xingwangzhiku
 ```
-
----
-
-## 📦 CNB 流水线
-
-项目根目录的 `.cnb.yml` 配置了预览模式：
-- 镜像地址使用**常量**而非变量，评委 Fork 后可正常启动
-- 制品库需设为**公有**，确保镜像可被拉取
 
 ---
 
