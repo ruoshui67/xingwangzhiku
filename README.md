@@ -8,7 +8,7 @@
 
 ### 方式 ①：浏览器直接打开（无需任何工具）
 
-👉 **[点击试玩](https://abcd-1111-d7g8ch5d2ffbe4f3a-1443037185.tcloudbaseapp.com/)**
+👉 **[点击试玩](https://game-webgame-d5gvpmllx933a460a.webapps.tcloudbase.com)**
 
 ---
 
@@ -50,7 +50,7 @@ docker run -p 8080:80 docker.cnb.cool/ruoshui67/xingwangzhiku:latest
 #### 方式 B：手动上传
 1. 打开 [CloudBase 控制台](https://tcb.cloud.tencent.com/dev?envId=abcd-1111-d7g8ch5d2ffbe4f3a#/static-hosting)
 2. 静态网站托管 → 上传 `build/web/` 所有文件
-3. 访问 `https://abcd-1111-d7g8ch5d2ffbe4f3a-1443037185.tcloudbaseapp.com/`
+3. 访问 `https://game-webgame-d5gvpmllx933a460a.webapps.tcloudbase.com`
 
 ### 本地构建 Docker
 
