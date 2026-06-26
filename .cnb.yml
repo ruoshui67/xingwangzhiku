@@ -21,7 +21,7 @@ $:
             # 启用预览模式
             onlyPreview: true
             # 启动业务端口的命令，端口必须启动在 8686
-            launch: docker run -d --network host -e PORT=8686 -e CNB_API_ENDPOINT -e CNB_REPO_SLUG -e CNB_TOKEN docker.cnb.cool/ruoshui67/xingwangzhiku:latest
+            launch: docker run -d -p 8686:80 docker.cnb.cool/ruoshui67/xingwangzhiku:latest
             # 保活时间，单位毫秒，不设置默认 10 分钟没有心跳（检测不到开发环境内的 http 连接）即关闭开发环境
             keepAliveTimeout: 3600000
             daemon: true
